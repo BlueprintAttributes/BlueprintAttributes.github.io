@@ -1,0 +1,1545 @@
+  <!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="color-scheme" content="light dark">
+
+
+  <meta name="generator" content="surreal-docs-"/>
+
+  <title>SGBANewDataTableWindowContent - Blueprint Attributes API reference</title>
+
+  <link rel="stylesheet" href="localres/styles/udocs_processor/theme1.css"
+      type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Red+Hat+Mono:wght@300;400;500;600;700&family=Red+Hat+Text:wght@300;400;500;600;700&display=block" rel="stylesheet">
+</head>
+<body>
+<script>
+  let currentTheme = localStorage.getItem("theme");
+  if (!currentTheme) {
+    currentTheme = "dark";
+    localStorage.setItem("theme", currentTheme);
+  }
+  document.body.dataset.theme = currentTheme;
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="big-header" id="big-header">
+  <aside class="big-header-content">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="brand">
+      <div class="brand-container">
+        <a class="brand-link" href="docs+faca135f.html">
+          <span class="brand-text">Blueprint Attributes</span>
+        </a>
+        <span class="version-picker
+" id="version-picker">
+          <span class="version-picker-text
+              "
+>
+            0.2.0
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </aside>
+</div>
+
+
+<div class="page">
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      <div class="sidebar-sticky">
+        <div class="sidebar-tree">
+              <p class="caption" role="heading">
+                <span class="caption-text">Blueprint Attributes</span>
+              </p>
+            <ul >
+            <li class="toctree-l1 
+
+">
+  <a class="reference
+  
+  
+  internal"
+  href="docs+faca135f.html">Blueprint Attributes API reference</a>
+  
+</li>
+
+
+            </ul>
+              <p class="caption" role="heading">
+                <span class="caption-text">Documentation</span>
+              </p>
+            <ul >
+            <li class="toctree-l1 
+
+">
+  <a class="reference
+  
+  
+  internal"
+  href="api+cpp.html">C++ API Reference</a>
+  
+</li>
+
+<li class="toctree-l1 
+
+">
+  <a class="reference
+  
+  
+  internal"
+  href="api+blueprint.html">Blueprint API Reference</a>
+  
+</li>
+
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="main-article" class="native-class-article">
+          <ul class="breadcrumbs"><!--
+         --><!--
+         --><li class="breadcrumb"><!--
+              --><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i><!--
+              --><a href="api+cpp.html" title="C++ API Reference">C++ API Reference</a></li><!--
+          --><!--
+         --><li class="breadcrumb"><!--
+              --><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i><!--
+              --><a href="api+cpp+BlueprintAttributesEditor.html" title="BlueprintAttributesEditor">BlueprintAttributesEditor</a></li><!--
+          --><!--
+         --><li class="breadcrumb"><!--
+              --><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i><!--
+              -->SGBANewDataTableWindowContent</li><!--
+          --><!--
+          --></ul>
+<section id="class" class="api-article">
+    <div class="api-header">
+        <p class="api-enity-type">Native class</p>
+    </div>
+    <h1><span class="api-name">SGBANewDataTableWindowContent</span><a class="headerlink" href="#class"
+           title="Permalink to this heading">#</a>
+    </h1>
+    <ul class="api-definition-options">
+<!--
+--><li class="api-definition-option"><!--
+  -->Declared in <span class="api-path">"Editor/Slate/SGBANewDataTableWindowContent.h"</span><!--
+--></li><!--
+-->    </ul>
+    <div class="api-native-definition">
+        <span class="api-keyword">
+class        </span>
+<!--
+        --><span class="api-name">SGBANewDataTableWindowContent</span><!--
+        -->            :
+                    <span class="api-keyword">public&nbsp;</span><!--
+                    --><!--
+                -->SCompoundWidget    </div>
+        <p>Widget to provide an UI to choose a content browser path to generate a new DataTable (FAttributeMetaData) based on the properties of a given Attribute Set Blueprint.</p>
+    <section id="enums">
+        <h2>Internal enums<a class="headerlink" href="#enums" title="Permalink to this heading">#</a></h2>
+        <ul class="api-sub-index api-sub-index-native">
+            <li>
+                <div class="api-access">private<div class="api-line"></div></div>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">ECalculateColumnType<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    -->                </ul>
+                <div class="api-preview-definition">
+                    <a class="api-index-link api-index-link-native" href="api+cpp+BlueprintAttributesEditor+fb4a128d+3f30348d.html"><!--
+                        --><span class="api-name">ECalculateColumnType</span></a>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="methods">
+        <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+        <ul class="api-sub-index api-sub-index-native">
+            <li>
+                <div class="api-access">public<div class="api-line"></div></div>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">Construct<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+a8a9b7c9.html"><span class="api-name"><!--
+                            -->Construct</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FArguments&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InArgs</span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">const TWeakObjectPtr&#8302;&lt;UBlueprint&gt;&amp;</span><!--
+                                -->&#32;<span class="api-name">InBlueprint</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Constructs this widget with InArgs</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GenerateCSVFromBlueprintAttributes<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;static                        <span class="api-preview-nk api-name">FString</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+60c5d68.html"><span class="api-name"><!--
+                            -->GenerateCSVFromBlueprintAttributes</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const TWeakObjectPtr&#8302;&lt;UBlueprint&gt;&amp;</span><!--
+                                -->&#32;<span class="api-name">InBlueprint</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">SLATE_BEGIN_ARGS<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;inline                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+18fdb847.html"><span class="api-name"><!--
+                            -->SLATE_BEGIN_ARGS</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name"><a href="api+cpp+BlueprintAttributesEditor+fb4a128d.html" title="SGBANewDataTableWindowContent">SGBANewDataTableWindowContent</a></span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <div class="api-access">private<div class="api-line"></div></div>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">BuildDataColumnsAndRows<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+b91f4195.html"><span class="api-name"><!--
+                            -->BuildDataColumnsAndRows</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const UDataTable&#8302;*</span><!--
+                                -->&#32;<span class="api-name">InDataTable</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Fills up AvailableColumns / AvailableRows and builds up ColumnNamesHeaderRow columns, computing widths in the process</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">CalculateColumnWidth<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">float</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+1cbca11a.html"><span class="api-name"><!--
+                            -->CalculateColumnWidth</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const float</span><!--
+                                -->&#32;<span class="api-name">InInitialValue</span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">const <a href="api+cpp+BlueprintAttributesEditor+fb4a128d+3f30348d.html" title="ECalculateColumnType">ECalculateColumnType</a></span><!--
+                                -->&#32;<span class="api-name">InColumnType</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">CloseDialog<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+2a29d935.html"><span class="api-name"><!--
+                            -->CloseDialog</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Closes this dialog</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetAssetNameText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FText</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+d2c501d.html"><span class="api-name"><!--
+                            -->GetAssetNameText</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Gets the name to display in the asset name box</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetNameErrorLabelText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FText</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+be4130d1.html"><span class="api-name"><!--
+                            -->GetNameErrorLabelText</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Gets the text to display in the name error label</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetNameErrorLabelVisibility<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">EVisibility</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+815ce343.html"><span class="api-name"><!--
+                            -->GetNameErrorLabelVisibility</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Gets the visibility of the name error label</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetNameWarningLabelText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FText</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+b738bab4.html"><span class="api-name"><!--
+                            -->GetNameWarningLabelText</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Gets the text to display in the name warning label</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetNameWarningLabelVisibility<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">EVisibility</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+af786c6a.html"><span class="api-name"><!--
+                            -->GetNameWarningLabelVisibility</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Gets the visibility of the name warning label</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetObjectPathForSave<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FString</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+7fa6ab47.html"><span class="api-name"><!--
+                            -->GetObjectPathForSave</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const bool</span><!--
+                                -->&#32;<span class="api-name">bInIsLongPath</span><!--
+                                --></span><span class="api-name"></span><!--
+                                -->&#32; = <span class="api-name">true</span><!--
+                                  --></span></div></div>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetPathNameText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FText</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+a95bea3a.html"><span class="api-name"><!--
+                            -->GetPathNameText</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Gets the name to display in the path text block</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">HandleAssetNameTextCommitted<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+ea8d0fb7.html"><span class="api-name"><!--
+                            -->HandleAssetNameTextCommitted</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FText&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InText</span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">ETextCommit::Type</span><!--
+                                -->&#32;<span class="api-name">InCommitType</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Fired when the asset name box text is committed</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">HandleBlueprintChanged<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+c7f9aaeb.html"><span class="api-name"><!--
+                            -->HandleBlueprintChanged</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">UBlueprint*</span><!--
+                                -->&#32;<span class="api-name">InBlueprint</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">HandleModelPropertyChanged<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+8bafd2f1.html"><span class="api-name"><!--
+                            -->HandleModelPropertyChanged</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FString&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InPropertyChanged</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">HandlePathSelected<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+32099ec2.html"><span class="api-name"><!--
+                            -->HandlePathSelected</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FString&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InPath</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Updates view model whenever a new path is selected</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">IsConfirmButtonEnabled<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">bool</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+1324cefb.html"><span class="api-name"><!--
+                            -->IsConfirmButtonEnabled</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Determines if the confirm button (e.g. Open/Save) is enabled.</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">MakeRowWidget<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">TSharedRef&#8302;&lt;&#8302;ITableRow&#8302;&gt;</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+4c2d2a67.html"><span class="api-name"><!--
+                            -->MakeRowWidget</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FDataTableEditorRowListViewDataPtr</span><!--
+                                -->&#32;<span class="api-name">InRowDataPtr</span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">const TSharedRef&#8302;&lt;&#8302;STableViewBase&#8302;&gt;&amp;</span><!--
+                                -->&#32;<span class="api-name">OwnerTable</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Make the widget for a row entry in the data table row list view</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">OnCancelClicked<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FReply</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+fce8878a.html"><span class="api-name"><!--
+                            -->OnCancelClicked</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Handler for when the cancel button is clicked</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">OnConfirmClicked<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FReply</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+afba70da.html"><span class="api-name"><!--
+                            -->OnConfirmClicked</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Handler for when the confirm button (e.g. Open/Save) is clicked</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">RefreshRowNameColumnWidth<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+eef36318.html"><span class="api-name"><!--
+                            -->RefreshRowNameColumnWidth</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">RefreshRowNumberColumnWidth<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+d1b7a051.html"><span class="api-name"><!--
+                            -->RefreshRowNumberColumnWidth</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">SetError<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+a1ac4535.html"><span class="api-name"><!--
+                            -->SetError</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FText&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InErrorText</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">SetWarning<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+8b8b3ac5.html"><span class="api-name"><!--
+                            -->SetWarning</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FText&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InWarningText</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">UpdateInputValidity<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+782805e5.html"><span class="api-name"><!--
+                            -->UpdateInputValidity</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <div class="api-access">public<div class="api-line"></div></div>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">~SGBANewDataTableWindowContent<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;virtual                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesEditor+fb4a128d+2797b879.html"><span class="api-name"><!--
+                            -->~SGBANewDataTableWindowContent</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="fields">
+        <h2>Fields<a class="headerlink" href="#fields"
+                     title="Permalink to this heading">#</a></h2>
+        <ul class="api-sub-index api-sub-index-native">
+            <li>
+                <div class="api-access">public<div class="api-line"></div></div>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">RowNameColumnId<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            -->&#32;static</span><!--
+                            --><span class="api-preview-nk api-name">
+                                const FName
+                                <span class="api-name">RowNameColumnId</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The column id for the row name list view column</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">RowNumberColumnId<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            -->&#32;static</span><!--
+                            --><span class="api-preview-nk api-name">
+                                const FName
+                                <span class="api-name">RowNumberColumnId</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The column id for the row number list view column</p>
+                </div>
+            </li>
+            <li>
+                <div class="api-access">private<div class="api-line"></div></div>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">AvailableColumns<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TArray&#8302;&lt;&#8302;FDataTableEditorColumnHeaderDataPtr&#8302;&gt;
+                                <span class="api-name">AvailableColumns</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Array of the columns that are available for editing</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">AvailableRows<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TArray&#8302;&lt;&#8302;FDataTableEditorRowListViewDataPtr&#8302;&gt;
+                                <span class="api-name">AvailableRows</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Array of the rows that are available for editing</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">bLastInputValidityCheckSuccessful<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                bool
+                                <span class="api-name">bLastInputValidityCheckSuccessful</span>
+<span class="api-native-default">= true</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>True if the last validity check returned that the class name/path is valid for creation</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">bLastInputValidityWarningSuccessful<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                bool
+                                <span class="api-name">bLastInputValidityWarningSuccessful</span>
+<span class="api-native-default">= true</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">Blueprint<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TWeakObjectPtr&#8302;&lt;UBlueprint&gt;
+                                <span class="api-name">Blueprint</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Weak pointer to the UBlueprint we're basing the model / widget on</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">CellsListView<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SListView&#8302;&lt;&#8302;FDataTableEditorRowListViewDataPtr&#8302;&gt;&gt;
+                                <span class="api-name">CellsListView</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>List view responsible for showing the rows in VisibleRows for each entry in AvailableColumns</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">ColumnNamesHeaderRow<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SHeaderRow&#8302;&gt;
+                                <span class="api-name">ColumnNamesHeaderRow</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Header row containing entries for each column in AvailableColumns</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">ErrorBox<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SWarningOrErrorBox&#8302;&gt;
+                                <span class="api-name">ErrorBox</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Error box widget</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">LastInputValidityErrorText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                FText
+                                <span class="api-name">LastInputValidityErrorText</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The error text from the last validity check</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">NameEditableText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SEditableTextBox&#8302;&gt;
+                                <span class="api-name">NameEditableText</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The name box. Only used in save dialogs.</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">PathPicker<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SPathPicker&#8302;&gt;
+                                <span class="api-name">PathPicker</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Path Picker used by the dialog</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">PathText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;STextBlock&#8302;&gt;
+                                <span class="api-name">PathText</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The path box.</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">RowNameColumnWidth<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                float
+                                <span class="api-name">RowNameColumnWidth</span>
+<span class="api-native-default">= 0.f</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Width of the row name column</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">RowNumberColumnWidth<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                float
+                                <span class="api-name">RowNumberColumnWidth</span>
+<span class="api-native-default">= 0.f</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Width of the row number column</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">ViewModel<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;<a href="api+cpp+BlueprintAttributesEditor+1d750270.html" title="FNewDataTableWindowViewModel">FNewDataTableWindowViewModel</a>&#8302;&gt;
+                                <span class="api-name">ViewModel</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>View model for this widget</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">WarningBox<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SWarningOrErrorBox&#8302;&gt;
+                                <span class="api-name">WarningBox</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Error box widget</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">WarningOrErrorSwitcher<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                TSharedPtr&#8302;&lt;&#8302;SWidgetSwitcher&#8302;&gt;
+                                <span class="api-name">WarningOrErrorSwitcher</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Widget switcher to display either warn or error box</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</section>
+        </article>
+      </div>
+      <footer>
+        <div class="related-pages">
+        </div>
+<div class="last-updated">
+          Last updated 
+    30
+    September
+    
+    2023
+
+
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright © 2023, Mickael Daniel
+            </div>
+            <div class="powered-by">
+            🗲 Powered by
+            <a href="https://surrealdocs.com" class="reference">Surreal Docs</a>
+            </div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+
+            </div>
+            <div style="padding: 1em; background-color: red;height: 1em;color: white; display: flex; align-items: center; justify-content: center;">
+              This page is generated by&nbsp;<a href="https://medelfor.com" target="_blank" style="color: white; text-decoration-color: white;">Surreal Docs</a>&nbsp;for free
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree" id="toc-tree"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<ul class="available-versions" id="available-versions">
+</ul>
+<!-- You aren't allowed to be here -->
+<script src="localres/scripts/udocs_processor/theme/theme1/theme1.bundle.js"></script>
+</body>
+</html>

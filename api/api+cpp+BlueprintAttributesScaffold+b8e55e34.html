@@ -1,0 +1,1243 @@
+  <!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="color-scheme" content="light dark">
+
+
+  <meta name="generator" content="surreal-docs-"/>
+
+  <title>FGBAAttributeSetWizardViewModel - Blueprint Attributes API reference</title>
+
+  <link rel="stylesheet" href="localres/styles/udocs_processor/theme1.css"
+      type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Red+Hat+Mono:wght@300;400;500;600;700&family=Red+Hat+Text:wght@300;400;500;600;700&display=block" rel="stylesheet">
+</head>
+<body>
+<script>
+  let currentTheme = localStorage.getItem("theme");
+  if (!currentTheme) {
+    currentTheme = "dark";
+    localStorage.setItem("theme", currentTheme);
+  }
+  document.body.dataset.theme = currentTheme;
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="big-header" id="big-header">
+  <aside class="big-header-content">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="brand">
+      <div class="brand-container">
+        <a class="brand-link" href="docs+faca135f.html">
+          <span class="brand-text">Blueprint Attributes</span>
+        </a>
+        <span class="version-picker
+" id="version-picker">
+          <span class="version-picker-text
+              "
+>
+            0.2.0
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </aside>
+</div>
+
+
+<div class="page">
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      <div class="sidebar-sticky">
+        <div class="sidebar-tree">
+              <p class="caption" role="heading">
+                <span class="caption-text">Blueprint Attributes</span>
+              </p>
+            <ul >
+            <li class="toctree-l1 
+
+">
+  <a class="reference
+  
+  
+  internal"
+  href="docs+faca135f.html">Blueprint Attributes API reference</a>
+  
+</li>
+
+
+            </ul>
+              <p class="caption" role="heading">
+                <span class="caption-text">Documentation</span>
+              </p>
+            <ul >
+            <li class="toctree-l1 
+
+">
+  <a class="reference
+  
+  
+  internal"
+  href="api+cpp.html">C++ API Reference</a>
+  
+</li>
+
+<li class="toctree-l1 
+
+">
+  <a class="reference
+  
+  
+  internal"
+  href="api+blueprint.html">Blueprint API Reference</a>
+  
+</li>
+
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="main-article" class="native-class-article">
+          <ul class="breadcrumbs"><!--
+         --><!--
+         --><li class="breadcrumb"><!--
+              --><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i><!--
+              --><a href="api+cpp.html" title="C++ API Reference">C++ API Reference</a></li><!--
+          --><!--
+         --><li class="breadcrumb"><!--
+              --><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i><!--
+              --><a href="api+cpp+BlueprintAttributesScaffold.html" title="BlueprintAttributesScaffold">BlueprintAttributesScaffold</a></li><!--
+          --><!--
+         --><li class="breadcrumb"><!--
+              --><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i><!--
+              -->FGBAAttributeSetWizardViewModel</li><!--
+          --><!--
+          --></ul>
+<section id="class" class="api-article">
+    <div class="api-header">
+        <p class="api-enity-type">Native class</p>
+    </div>
+    <h1><span class="api-name">FGBAAttributeSetWizardViewModel</span><a class="headerlink" href="#class"
+           title="Permalink to this heading">#</a>
+    </h1>
+    <ul class="api-definition-options">
+<!--
+--><li class="api-definition-option"><!--
+  -->Declared in <span class="api-path">"Models/GBAAttributeSetWizardViewModel.h"</span><!--
+--></li><!--
+-->    </ul>
+    <div class="api-native-definition">
+        <span class="api-keyword">
+class        </span>
+<!--
+        --><span class="api-name">FGBAAttributeSetWizardViewModel</span><!--
+        -->            :
+                    <span class="api-keyword">public&nbsp;</span><!--
+                    --><!--
+                --><a href="api+cpp+BlueprintAttributesEditorCommon+9a93106d.html" title="IGBASlateViewModel">IGBASlateViewModel</a>    </div>
+        <p>Implements a view model for the attribute set wizard.</p>
+    <section id="delegates">
+        <h2>Internal delegates<a class="headerlink" href="#delegates" title="Permalink to this heading">#</a></h2>
+        <ul class="api-sub-index api-sub-index-native">
+            <li>
+                <div class="api-access">public<div class="api-line"></div></div>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">FOnUpdateValidityChanged<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    -->                </ul>
+                <div class="api-preview-definition">
+                    <a class="api-index-link api-index-link-native"
+                                   href="api+cpp+BlueprintAttributesScaffold+b8e55e34+bf40286.html"><!--
+                        --><span class="api-name">FOnUpdateValidityChanged</span></a>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Delegate called whenever input and model properties are validated passing down whether it was valid, and an error text if not</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="methods">
+        <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+        <ul class="api-sub-index api-sub-index-native">
+            <li>
+                <div class="api-access">public<div class="api-line"></div></div>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">FGBAAttributeSetWizardViewModel<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+b8e55e34_51df4f8f.html"><span class="api-name"><!--
+                            -->FGBAAttributeSetWizardViewModel</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Default constructor with ParentClass set to UAttributeSet</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">FGBAAttributeSetWizardViewModel<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;explicit                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+b8e55e34_6d81ff0d.html"><span class="api-name"><!--
+                            -->FGBAAttributeSetWizardViewModel</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FNewClassInfo&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InParentClassInfo</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Convenience constructor so you can construct from a FNewClassInfo</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">FGBAAttributeSetWizardViewModel<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;explicit                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+b8e55e34_75ae9e93.html"><span class="api-name"><!--
+                            -->FGBAAttributeSetWizardViewModel</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const UClass&#8302;*</span><!--
+                                -->&#32;<span class="api-name">InClass</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Convenience constructor so you can construct from a UClass</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">AddRequiredModuleDependency<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+6046590f.html"><span class="api-name"><!--
+                            -->AddRequiredModuleDependency</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const FString&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InModuleName</span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">const FText&#8302;&amp;</span><!--
+                                -->&#32;<span class="api-name">InReason</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Adds a new required module dependency if it's not the currently selected module</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_6a081d04.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name"><a href="api+cpp+BlueprintAttributesScaffold+GBAAttributeSetWizardViewModel.h+1d951cee.html" title="EGBAPreviewCppType">EGBAPreviewCppType</a></span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">CurrentPreviewValue</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Current value for the segmented control active view</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_e1907191.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FNewClassInfo</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">ParentClassInfo</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The selected parent class</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_fe8d39f8.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FString</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">CalculatedClassHeaderName</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The calculated name of the generated header file for this class</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_6733ac6f.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FString</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">CalculatedClassSourceName</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The calculated name of the generated source file for this class</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_7669a5d2.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FString</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">NewClassName</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The name of the class being created (Value of Name Edit box)</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_7eb16a85.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FString</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">NewClassPath</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The path to place the files for the class being generated</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_c9ee849c.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">FString</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">SelectedClassPath</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The displayed and edited path to place the file for the class being generated, relative to target module source path</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_ae329f05.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">GameProjectUtils::EClassLocation</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">ClassLocation</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Whether the class should be created as a Public or Private class</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_1447b953.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">TArray&#8302;&lt;&#8302;<a href="api+cpp+BlueprintAttributesScaffold+b3381568.html" title="FGBARequiredModuleDependency">FGBARequiredModuleDependency</a>&#8302;&gt;</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">RequiredModuleDependencies</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>List of required module dependencies for class being generated (dynamic based on parent class and other parameters)</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_6b1fc38b.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">TArray&#8302;&lt;&#8302;FString&#8302;&gt;</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">MissingModuleDependencies</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>List of missing module dependencies for class being generated (updated as part of the validation process)</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_75245402.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">TSharedPtr&#8302;&lt;&#8302;FModuleContextInfo&#8302;&gt;</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">SelectedModuleInfo</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Information about the currently selected module; used for class validation</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_c667b922.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">TWeakObjectPtr&#8302;&lt;UBlueprint&gt;</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">SelectedBlueprint</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The asset currently being displayed by the header view</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">DECLARE_VIEWMODEL_PROPERTY<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name"></span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+58274e7e_38bd7857.html"><span class="api-name"><!--
+                            -->DECLARE_VIEWMODEL_PROPERTY</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">bool</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name">,<br><span class="api-preview-nk"><span class="api-name">bSatisfiesModuleDependencies</span><!--
+                                -->&#32;<span class="api-name"></span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Whether all required module dependencies are present in target module Build.cs file</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">GetLastInputValidityErrorText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">FText</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+c8093a6a.html"><span class="api-name"><!--
+                            -->GetLastInputValidityErrorText</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Returns localized text with error info in case last input validity check failed</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">Initialize<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><li class="api-option"><!--
+                    -->Implements                        IGBASlateViewModel::&#8203;<a href="api+cpp+BlueprintAttributesEditorCommon+9a93106d+1e2ec8c6.html" title="Initialize">Initialize</a><!--
+                    --></li><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;virtual                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+1e2ec8c6.html"><span class="api-name"><!--
+                            -->Initialize</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;override                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Noop (for now) initialization sequence</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">IsLastInputValidityCheckSuccessful<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">bool</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+799c7132.html"><span class="api-name"><!--
+                            -->IsLastInputValidityCheckSuccessful</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+&#32;const                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Returns whether last validity check was successful</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">OnUpdateValidityChanged<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">&#32;inline                        <span class="api-preview-nk api-name"><a href="api+cpp+BlueprintAttributesScaffold+b8e55e34+bf40286.html" title="FOnUpdateValidityChanged">FOnUpdateValidityChanged</a>&#8302;&amp;</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+4d326f42.html"><span class="api-name"><!--
+                            -->OnUpdateValidityChanged</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">ResetRequiredModuleDependencies<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+bb71a178.html"><span class="api-name"><!--
+                            -->ResetRequiredModuleDependencies</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Reset required module dependencies to the reserved always included ones</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">RunPeriodicValidationOnTick<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+773c9ca1.html"><span class="api-name"><!--
+                            -->RunPeriodicValidationOnTick</span></a>(&#8203;<div class="api-mc">
+                            <div class="api-tab4"></div>
+                            <div>
+<!--
+                                --><span class="api-params"><span class="api-preview-nk"><span class="api-name">const double</span><!--
+                                -->&#32;<span class="api-name">InCurrentTime</span><!--
+                                --></span><span class="api-name"></span></div></div>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Runs periodic check to check the class name/path for validity in case the disk contents changed and the location is now valid or invalid.</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options">
+                    <li class="api-option"><span class="api-name">UpdateInputValidity<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                    -->                </ul>
+                <div class="api-native-function">
+                    <div class="api-preview-definition">
+<!--
+                        --><span class="api-native-pre-func">                        <span class="api-preview-nk api-name">void</span></span>
+                        <div class="api-mc">
+                            <div class="api-tab2"></div>
+                            <div>
+                        <a class="api-index-link api-index-link-native"
+                                       href="api+cpp+BlueprintAttributesScaffold+b8e55e34+782805e5.html"><span class="api-name"><!--
+                            -->UpdateInputValidity</span></a>(&#8203;<!--
+                                --><span class="api-params"></span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Checks the current class name/path for validity and updates cached values accordingly</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="fields">
+        <h2>Fields<a class="headerlink" href="#fields"
+                     title="Permalink to this heading">#</a></h2>
+        <ul class="api-sub-index api-sub-index-native">
+            <li>
+                <div class="api-access">private<div class="api-line"></div></div>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">bLastInputValidityCheckSuccessful<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                bool
+                                <span class="api-name">bLastInputValidityCheckSuccessful</span>
+<span class="api-native-default">= false</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>True if the last validity check returned that the class name/path is valid for creation</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">bPreventPeriodicValidityChecksUntilNextChange<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                bool
+                                <span class="api-name">bPreventPeriodicValidityChecksUntilNextChange</span>
+<span class="api-native-default">= false</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Periodic checks for validity will not occur while this flag is true. Used to prevent a frame of &quot;this project already exists&quot; while exiting after a successful creation.</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">LastInputValidityErrorText<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                FText
+                                <span class="api-name">LastInputValidityErrorText</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The error text from the last validity check</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">LastPeriodicValidityCheckTime<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                double
+                                <span class="api-name">LastPeriodicValidityCheckTime</span>
+<span class="api-native-default">= 0</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The last time that the class name/path was checked for validity. This is used to throttle I/O requests to a reasonable frequency</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">OnUpdateValidityChangedDelegate<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                <a href="api+cpp+BlueprintAttributesScaffold+b8e55e34+bf40286.html" title="FOnUpdateValidityChanged">FOnUpdateValidityChanged</a>
+                                <span class="api-name">OnUpdateValidityChangedDelegate</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>Delegate invoked at the end of a new validity check</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">PeriodicValidityCheckFrequency<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            --></span><!--
+                            --><span class="api-preview-nk api-name">
+                                double
+                                <span class="api-name">PeriodicValidityCheckFrequency</span>
+<span class="api-native-default">= 4</span><!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The frequency in seconds for validity checks while the dialog is idle. Changes to the name/path immediately update the validity.</p>
+                </div>
+            </li>
+            <li>
+                <ul class="api-options"><!--
+                    --><li class="api-option"><span class="api-name">ReservedModuleDependencies<!--
+                    --><span class="api-end-select">&</span></span></li><!--
+                    --><!--
+                    --><!--
+                --></ul>
+                <div class="api-native-property">
+                    <div class="api-preview-definition">
+<!--
+                            --><span><!--
+                            -->&#32;static</span><!--
+                            --><span class="api-preview-nk api-name">
+                                TArray&#8302;&lt;&#8302;<a href="api+cpp+BlueprintAttributesScaffold+b3381568.html" title="FGBARequiredModuleDependency">FGBARequiredModuleDependency</a>&#8302;&gt;
+                                <span class="api-name">ReservedModuleDependencies</span>
+<!--
+                            --></span>
+                    </div>
+                </div>
+                <div class="api-sub-index-description">
+                    <p>The list of &quot;reserved&quot; always required dependencies</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</section>
+        </article>
+      </div>
+      <footer>
+        <div class="related-pages">
+        </div>
+<div class="last-updated">
+          Last updated 
+    30
+    September
+    
+    2023
+
+
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright © 2023, Mickael Daniel
+            </div>
+            <div class="powered-by">
+            🗲 Powered by
+            <a href="https://surrealdocs.com" class="reference">Surreal Docs</a>
+            </div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+
+            </div>
+            <div style="padding: 1em; background-color: red;height: 1em;color: white; display: flex; align-items: center; justify-content: center;">
+              This page is generated by&nbsp;<a href="https://medelfor.com" target="_blank" style="color: white; text-decoration-color: white;">Surreal Docs</a>&nbsp;for free
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree" id="toc-tree"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<ul class="available-versions" id="available-versions">
+</ul>
+<!-- You aren't allowed to be here -->
+<script src="localres/scripts/udocs_processor/theme/theme1/theme1.bundle.js"></script>
+</body>
+</html>
