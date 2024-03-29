@@ -81,7 +81,7 @@ Blueprint Attributes enables a workflow 100% within the Editor and Blueprints fo
 
 - Replication and Multiplayer
 - Integration with K2 Nodes
-- Wizard to port BP defined Attributes to C++
+- (Optional) Wizard to port BP defined Attributes to C++
 - Referencer Handlers
 
 </div>
@@ -176,7 +176,7 @@ Use them right away within your Gameplay Effects.
 
 ###### Interactions with Gameplay Effects
 
-Get access to `UAttributeSet` API, exposed to Blueprints as Events or overridable methods.
+Get access to `UAttributeSet` API, exposed to Blueprints as events or overridable methods.
 
 </div>
 
@@ -188,7 +188,7 @@ Get access to `UAttributeSet` API, exposed to Blueprints as Events or overridabl
 
 ###### Set Base Value directly from Details Panel
 
-Custom details customization to set Base Value (initial) from Blueprint Details.
+Custom details customization to set Base Value from Blueprint Details.
 
 </div>
 
@@ -200,48 +200,10 @@ Custom details customization to set Base Value (initial) from Blueprint Details.
 
 ###### Set Base Value directly from Details Panel
 
-View and set Attribute details at once <span class="small" style="font-szize: 0.8rem;">*(with Class Defaults button selected in the toolbar)*</span>
+View and set Attribute details at once <span class="small" style="font-size: 1.2rem">*(with Class Defaults button selected in the toolbar)*</span>
 </div>
 
 ![bg](<Capture d'écran 2024-03-05 231531.png>)
-
----
-
-<div class="blur-lg p-0" style="position: absolute; left: 0px; bottom: 0px; width: 100%; padding: 0 0.5em 0.5em 0.5em;">
-
-###### Set Base Value directly from Details Panel
-
-Custom details customization to set Base Value (initial) from Blueprint Details.
-
-</div>
-
-![bg](<Capture d'écran 2024-03-05 233439.png>)
-
----
-
-<div class="blur-lg p-0" style="position: absolute; left: 0px; bottom: 0px; width: 100%; padding: 0 0.5em 0.5em 0.5em;">
-
-###### Built-in Clamping
-
-<div style="font-size: 0.65em;">
-
-Clamping of Gameplay Attributes is a really common pattern. It made sense to add native support for it.
-
-You can do so from either:
-
-- DataTables (AttributeMetaData)
-  - Using Min and Max columns
-- Or with a custom made Gameplay Attribute `FGBAGameplayClampedAttributeData`
-  - Tweak clamping behavior from Details Panel
-- Or manually using the exposed events on the Attribute Set itself
-  - PostGameplayEffectExecute, PreAttributeChange / PreAttributeBaseChange, etc.
-
-</div>
-
-</div>
-
-![bg](AttributeSets_Clamping_DataTable_01.png)
-![bg](<Capture d'écran 2024-03-06 014454.png>)
 
 ---
 
@@ -351,7 +313,7 @@ Those few custom methods were designed to help implementing Exec Calc classes in
 
 </div>
 
-<div class="small" style="font-size: 0.65em;">
+<div class="small" style="font-size: 0.47em;">
 
 - GetOwningSpec()
 - GetEffectContext()
@@ -360,6 +322,10 @@ Those few custom methods were designed to help implementing Exec Calc classes in
 - AttemptCalculateCapturedAttributeMagnitude()
 - AttemptCalculateCapturedAttributeMagnitudeWithBase()
 - AddOutputModifier()
+
+</div>
+
+<div class="small" style="font-size: 0.65em;">
 
 *For `AttemptCalculateCapured...` methods to work correctly, the Attribute needs to be added to the Relevant Attributes to Capture array in Class Defaults.*
 
@@ -457,22 +423,18 @@ Here's a basic flow of Save / Load to save the attributes on Ctrl+S, and load th
 
 A special thank you, from the bottom of my heart, to the following individuals:
 
-For early testing and providing valuable feedback
+- Metaseven - for early testing and providing valuable feedback, thank you so much!
+- Kite and Drakynfly
 
-- Metaseven - thank you so much!
-
-For supporting my rantings and doubts along the way while implementing this plugin (first commit in March 2022, 2 years!)
+For the support along the way while implementing this plugin (first commit in March 2022, 2 years!)
 
 - OneSilverLeaf
 - Mighteemouse
 
-Thank you.
+
+Thank you ❤️
 
 </div>
-
----
-
-
 
 <!-- ## Quicker iterations
 
