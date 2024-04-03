@@ -436,6 +436,9 @@ Thank you ❤️
 
 </div>
 
+<script defer src="https://analytics.eu.umami.is/script.js" data-website-id="9108253b-bd4d-49be-87a3-9689be313969"></script>
+
+
 <!-- ## Quicker iterations
 
 - Empower Game Designers and Blueprint Developers to quickly iterate on their Attribute design.
